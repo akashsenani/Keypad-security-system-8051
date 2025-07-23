@@ -162,7 +162,7 @@ RPT:
     ACALL LINE2
     MOV DPTR, #TEXT_S2
     ACALL LCD_OUT
-    ACALL SERVO_OPEN    ; Open door 180°
+    ACALL SERVO_OPEN    ; Open door 180Â°
     SETB P2.0          ; Set door open flag
     ACALL MONITOR_PIR  ; Start PIR monitoring
     SJMP GOBACK
@@ -211,7 +211,7 @@ PERSON_DETECTED:
 SERVO_OPEN:
     MOV R7, #200       ; 200 cycles (2 seconds)
 SERVO_OPEN_LOOP:
-    SETB SERVO         ; 2ms pulse for 180°
+    SETB SERVO         ; 2ms pulse for 180Â°
     ACALL DELAY_2MS
     CLR SERVO
     ACALL DELAY_18_5MS
@@ -221,7 +221,7 @@ SERVO_OPEN_LOOP:
 SERVO_CLOSE:
     MOV R7, #200       ; 200 cycles (2 seconds)
 SERVO_CLOSE_LOOP:
-    SETB SERVO         ; 1ms pulse for 0°
+    SETB SERVO         ; 1ms pulse for 0Â°
     ACALL DELAY_1MS
     CLR SERVO
     ACALL DELAY_18_5MS
